@@ -1,0 +1,129 @@
+header {
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 3vw;
+  position: fixed;
+  background-color: #FFF;
+  z-index: 100;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.headerLogo, .headerNavigation {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo img {
+  background: #3A55B4;
+  border-radius: 50%;
+  padding: 0.25vw;
+}
+
+h1 {
+  font-size: 2.5rem;
+  padding-left: 1vw;
+}
+
+.headerNavigation {
+  width: 30vw;
+  margin-right: 2vw;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  font-size: 1.6rem;
+}
+
+nav a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  position: relative;
+}
+
+nav a::after {
+  height: 2px;
+  width: 100%;
+  background: #3A55B4;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.router-link-exact-active {
+  border-bottom: 2px solid #3A55B4;
+}
+
+@media (max-width: 1200px) {}
+@media (max-width: 1024px) {
+  .headerNavigation {
+    width: 40vw;
+  }
+}
+@media (max-width: 992px) {}
+@media (max-width: 768px) {
+  .headerNavigation {
+    width: 45vw;
+  }
+}
+@media (max-width: 576px) {
+  .headerLogo img {
+    max-width: 40px;
+  }
+
+  .headerLogo h1 {
+    font-size: 1.3rem;
+  }
+
+  .headerNavigation {
+    width: 50vw;
+  }
+
+  .headerNavigation a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .headerNavigation {
+    width: 54vw;
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+    display: block;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+  }
+
+  nav ul {
+    justify-content: space-around;
+  }
+
+  .headerNavigation {
+    width: 100%;
+  }
+}

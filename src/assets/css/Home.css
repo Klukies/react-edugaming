@@ -1,0 +1,15 @@
+@media (max-width: 1024px) {
+  .article-wrapper {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  p, figcaption {
+    font-size: 1.2rem;
+  }
+}
