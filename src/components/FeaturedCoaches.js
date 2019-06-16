@@ -10,9 +10,9 @@ export default class FeaturedCoaches extends React.Component {
           <h2>Featured coaches:</h2>
           <ul className={styles.coaches}>
             {this.props.coaches.map(coach =>
-              <li className={styles.coach}>
+              <li className={styles.coach} key={coach.coach_id}>
                 <Link to={`/coach/${coach.username}`} className={styles.coach_link}>
-                  <h3>{coach.username}</h3>
+                  <h3>{coach.username} </h3>
                   <figure>
                     <div className={styles.figure_img}>
                       <img src={coach.img_url} alt={coach.name}/>

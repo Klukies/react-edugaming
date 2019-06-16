@@ -19,6 +19,9 @@ export default class HeaderComponent extends React.Component {
               <li>
                 <NavLink to='coaches'>Coaches</NavLink>
               </li>
+              <li>
+                <button onClick={this.props.openModal}>Show modal</button>
+              </li>
               {/* TODO
               <li>
                 <a v-if="!$auth.check()" @click="showLoginModal">Login</a>
