@@ -15,20 +15,27 @@ class App extends React.Component {
       isModalVisible: false,
     };
     this.showLoginModal = this.showLoginModal.bind(this);
+    this.closeLoginModal = this.closeLoginModal.bind(this);
   }
 
   showLoginModal() {
-    console.log('open modal');
+    this.setState({isModalVisible: !this.state.isModalVisible});
+  }
+
+  closeLoginModal(e) {
+    this.setState({isModalVisible: !this.state.isModalVisible});
   }
 
   render () {
     return (
       <Router>
-        <Authentication />
-        <HeaderComponent openModal={this.showLoginModal}/>
+        <Authentication
+          isModalVisible={this.state.isModalVisible}
+          closeModal={this.closeLoginModal} />
+        <HeaderComponent openModal={this.showLoginModal} />
         <div className='body'>
           <Route exact path='/' component={Home} />
-          <Route path='/coaches' component={Coaches} />
+          <Route exact path='/coaches' component={Coaches} />
         </div>
         <FooterComponent />
       </Router>

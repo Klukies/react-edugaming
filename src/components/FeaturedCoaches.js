@@ -7,7 +7,7 @@ export default class FeaturedCoaches extends React.Component {
     return (
       <article className='featured-coaches'>
         <div className='article-wrapper'>
-          <h2>Featured coaches:</h2>
+          <h2 className="home-title">Featured coaches:</h2>
           <ul className={styles.coaches}>
             {this.props.coaches.map(coach =>
               <li className={styles.coach} key={coach.coach_id}>

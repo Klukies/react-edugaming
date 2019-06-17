@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from 'react-slick';
 import styles from '../assets/css/Banners.module.css'
+import Slider from 'react-slick';
 
 export default class Banners extends React.Component {
   constructor(props) {

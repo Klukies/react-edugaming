@@ -1,0 +1,139 @@
+.modal_backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+}
+
+.modal {
+  background-color: #FFF;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  z-index: 105;
+  width: 20vw;
+  padding-bottom: 3vh;
+}
+
+.modalHeader, .authForm {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modalHeader {
+  text-align: center;
+}
+
+.authForm {
+  text-align: left;
+}
+
+.formLabel, .formInput {
+  width: 100%;
+}
+
+.formLabel {
+  position: absolute;
+  display: block;
+  transition: transform .2s ease-in-out;
+}
+
+.formInput {
+  font-size: 18px;
+  height: 36px;
+  border: 0;
+  border-bottom: 1px solid #3A55B4;
+  margin-bottom: 5vh;
+}
+
+.focused {
+  transform: translateY(-18px);
+}
+
+.closeButton {
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  position: relative;
+  background: #3A55B4;
+  border-radius: 2px;
+  border: solid 2px #fff;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-left: calc(100% - 30px);
+  margin-top: 4px;
+}
+
+.closeButton:hover {
+  background: #bb3333;
+  transform: rotate(90deg);
+}
+
+.closeButton b {
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  border: solid 10px rgba(255, 255, 255, 0);
+}
+
+.closeButton b:nth-child(1) {
+  border-top-color: #fff;
+  top: -2px;
+}
+
+.closeButton b:nth-child(2) {
+  border-left-color: #fff;
+  left: -2px;
+}
+
+.closeButton b:nth-child(3) {
+  border-bottom-color: #fff;
+  bottom: -2px;
+}
+
+.closeButton b:nth-child(4) {
+  border-right-color: #fff;
+  right: -2px;
+}
+
+.subTitle {
+  margin-bottom: 5vh;
+}
+
+.subTitle, .formLabel {
+  font-size: 1.3rem;
+}
+
+.error {
+  color: #bb3333;
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    width: 100vw;
+  }
+}

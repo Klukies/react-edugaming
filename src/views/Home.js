@@ -21,7 +21,7 @@ export default class Home extends React.Component {
         <Banners banners={this.state.banners}/>
         <article className="method">
           <div className="article-wrapper">
-            <h2>Method</h2>
+            <h2 className="home-title">Method</h2>
             <p>
               EduGaming coaches aren't just coaches - they're mentors.
               Every single instructor on our platform has passed our rigorous application process.<br/>

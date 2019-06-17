@@ -6,7 +6,7 @@ export default class Reviews extends React.Component {
     return (
       <article className="reviews">
         <div className='article-wrapper'>
-          <h2>What players are saying:</h2>
+          <h2 className="home-title">What players are saying:</h2>
           <ul className={styles.player_reviews}>
             {this.props.reviews.map((review, index) =>
               <li className={styles.review} key={index}>

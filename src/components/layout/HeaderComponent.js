@@ -9,18 +9,20 @@ export default class HeaderComponent extends React.Component {
         <div className={styles.headerLogo}>
           <img src={process.env.PUBLIC_URL + '/assets/images/logo.png'} alt="Logo of Edugaming"/>
           <h1>EduGaming</h1>
-      </div>
+        </div>
         <div className={styles.headerNavigation}>
           <nav>
             <ul>
               <li>
-                <NavLink to='/'>Home</NavLink>
+                <NavLink exact to='/'>Home</NavLink>
               </li>
               <li>
-                <NavLink to='coaches'>Coaches</NavLink>
+                <NavLink to='/coaches'>Coaches</NavLink>
               </li>
               <li>
-                <button onClick={this.props.openModal}>Show modal</button>
+                <button
+                className={styles.navLink}
+                onClick={this.props.openModal}>Login</button>
               </li>
               {/* TODO
               <li>
