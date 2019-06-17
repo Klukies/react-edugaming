@@ -52,6 +52,7 @@
   border: 0;
   border-bottom: 1px solid #3A55B4;
   margin-bottom: 5vh;
+  filter: none;
 }
 
 .focused {
