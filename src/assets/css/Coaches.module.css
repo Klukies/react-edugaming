@@ -1,0 +1,22 @@
+#coaches {
+  display: flex;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4vh;
+}
+
+.coaches-list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+@media (max-width: 1280px) {
+  #coaches {
+    display: block;
+    width: 80vw;
+  }
+}

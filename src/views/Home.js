@@ -36,8 +36,13 @@ export default class Home extends React.Component {
   )}
 
   componentDidMount() {
-    axios.get('/home').then(response => {
-      this.setState({banners: response.data.games, coaches: response.data.coaches, reviews: response.data.reviews});
+    axios.get('/home')
+    .then(response => {
+      this.setState({
+        banners: response.data.games,
+        coaches: response.data.coaches,
+        reviews: response.data.reviews
+      });
     });
     window.scrollTo(0,0);
   }

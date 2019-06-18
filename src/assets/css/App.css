@@ -19,7 +19,7 @@
   min-height: 86vh;
 }
 
-#coaches, .coach-full {
+.coach-full {
   padding-top: 4vh;
 }
 
@@ -93,4 +93,8 @@ article:nth-child(even) {
 
 .slick-slide div img, .slick-slide div img {
   object-fit: cover;
+}
+
+.is-active {
+  color: #ffd055 !important;
 }
