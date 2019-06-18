@@ -5,17 +5,22 @@ import ModalHeader from './ModalHeader';
 import LoginForm from './LoginForm';
 
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.loginCallback = this.loginCallback.bind(this);
+  }
+
   loginCallback = (loginData) => {
-    console.log(loginData.email);
     axios.post('/auth/login', {
       email: loginData.email,
       password: loginData.password
     })
-    .then(function (response) {
-      console.log(response);
+    .then((response) => {
+      localStorage.setItem('user', response.headers.authorization);
+      this.props.closeModal();
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch((err) => {
+      console.error(err);
     })
   }
 
@@ -32,6 +37,7 @@ export default class Login extends React.Component {
         modalLinkText='Sign up for free!'
         modalLink={this.props.showSignup} />
 
+        <span></span>
         <LoginForm loginCallback={this.loginCallback}/>
       </div>
     )

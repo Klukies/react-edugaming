@@ -31,20 +31,20 @@ export default class LoginForm extends React.Component {
 
   changeEmail(e) {
     this.setState({email: e.target.value})
-    this.focus();
+    this.focus(e);
   }
 
   changePassword(e) {
     this.setState({password: e.target.value})
-    this.focus();
+    this.focus(e);
   }
 
-  focus() {
-    if (isEmpty(this.state.email)) {
+  focus(e) {
+    if (isEmpty(this.state.email) && e.currentTarget.id === 'loginEmail') {
       this.setState({isEmailFocused: true});
     }
 
-    if (isEmpty(this.state.password)) {
+    if (e.currentTarget.id === 'loginPassword') {
       this.setState({isPasswordFocused: true});
     }
   }
