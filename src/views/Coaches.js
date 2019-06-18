@@ -10,4 +10,8 @@ export default class Coaches extends React.Component {
       </div>
     )
   }
+
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
 }
