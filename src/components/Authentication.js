@@ -11,6 +11,12 @@ export default class Authentication extends React.Component {
     }
     this.showSignup = this.showSignupModal.bind(this);
     this.showLogin = this.showLoginModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  closeModal() {
+    this.setState({isLogin: true});
+    this.props.closeModal();
   }
 
   showSignupModal() {
@@ -29,11 +35,11 @@ export default class Authentication extends React.Component {
       <div className={styles.modal_backdrop} onClick={this.props.closeModal}>
         <Login
           isLogin={this.state.isLogin}
-          closeModal={this.props.closeModal}
+          closeModal={this.closeModal}
           showSignup={this.showSignup}/>
         <Signup
           isLogin={this.state.isLogin}
-          closeModal={this.props.closeModal}
+          closeModal={this.closeModal}
           showLogin={this.showLogin}/>
       </div>
     )
