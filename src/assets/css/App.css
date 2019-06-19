@@ -96,5 +96,10 @@ article:nth-child(even) {
 }
 
 .is-active {
+  display: block;
+  color: #ffd055 !important;
+}
+
+.is-active-half::before {
   color: #ffd055 !important;
 }

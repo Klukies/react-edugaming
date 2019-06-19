@@ -15,7 +15,8 @@ export default class DesktopRatingsFilter extends React.Component {
   changeRating(e) {
     this.setState({
       ratingToFilter: e.target.value
-    })
+    },
+    this.props.ratingFilterCallback(e.target.value));
   }
 
   render() {

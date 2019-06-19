@@ -13,7 +13,8 @@ export default class DesktopGamesFilter extends React.Component {
   changePrice(e) {
     this.setState({
       priceToFilter: e.target.value
-    })
+    },
+    this.props.priceFilterCallback(e.target.value));
   }
 
   render() {

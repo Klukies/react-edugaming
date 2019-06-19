@@ -9,6 +9,11 @@ export default class Filters extends React.Component {
       filtersLoaded: false,
       filters: {}
     }
+    this.filterCallback = this.filterCallback.bind(this);
+  }
+
+  filterCallback(filters) {
+    this.props.filterCoaches(filters);
   }
 
   render() {
@@ -17,7 +22,7 @@ export default class Filters extends React.Component {
     if (!this.state.filtersLoaded) {
       return null
     }
-    return <DesktopFilters filters={this.state.filters} />
+    return <DesktopFilters filters={this.state.filters} filter={this.filterCallback} />
   }
 
   componentDidMount() {
