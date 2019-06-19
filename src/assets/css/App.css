@@ -104,6 +104,11 @@ article:nth-child(even) {
   color: #ffd055 !important;
 }
 
-.flatpickr-calendar, .flatpickr-month {
+.flatpickr-input {
+  display: none;
+}
+
+.flatpickr-calendar, .flatpickr-month, .flatpickr-monthDropdown-month,
+.flatpickr-monthDropdown-months, .flatpickr-weekday, .numInput {
   background: #1F337B !important;
 }
