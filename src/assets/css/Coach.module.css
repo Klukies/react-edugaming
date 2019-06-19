@@ -1,79 +1,12 @@
-.coach {
-  border: 1px solid #3A55B4;
-  border-radius: 3px;
-  width: 25%;
-  margin-right: 3vw;
-  padding-bottom: 2vh;
-  margin-bottom: 2vh;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.10);
-}
-
-.coach .rating {
-  padding-left: 1vw;
-  padding-right: 1vw;
-}
-
-.coach a > p {
-  font-size: 0.9rem;
-  text-align: center;
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
-}
-
-.coach a {
-  text-decoration: none;
-  color: #3A55B4;
-}
-
-.coachHeader {
-  display: flex;
-  margin-bottom: 1vh;
-}
-
-.rating {
-  width: 70%;
-  padding-top: 0.2vh;
-  padding-bottom: 0.2vh;
-  display: flex;
-  font-size: 1.5rem;
-}
-
-.price {
-  width: 30%;
-  background-color: #3A55B4;
-  color: #FFF;
-  padding-top: 0.75vh;
-  padding-bottom: 0.75vh;
-}
-
-.price p {
-  text-align: center;
-}
-
-.coachImage {
+.coachFull {
+  width: 60vw;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  margin-bottom: 1vh;
+  padding-top: 4vh;
 }
 
-.coachImage img {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.coachName {
-  text-align: center;
-}
-
-@media (max-width: 1280px) {
-  .coach {
-    width: 30%;
-  }
-}
-
-@media (max-width: 576px) {
-  .coach {
-    width: 100%;
+@media (max-width: 1024px) {
+  .coachFull {
+    width: 95vw;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../../assets/css/Coach.module.css';
+import styles from '../../assets/css/CoachItem.module.css';
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 

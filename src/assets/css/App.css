@@ -103,3 +103,7 @@ article:nth-child(even) {
 .is-active-half::before {
   color: #ffd055 !important;
 }
+
+.flatpickr-calendar, .flatpickr-month {
+  background: #1F337B !important;
+}

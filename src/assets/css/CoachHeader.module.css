@@ -1,0 +1,37 @@
+.coachHeader {
+  display: flex;
+  margin-bottom: 5vh;
+}
+
+.coachImage {
+  max-width: 300px;
+  margin-right: 1vw;
+}
+
+.coachImage img {
+  width: 100%;
+}
+
+.rating {
+  margin-bottom: 2vh;
+}
+
+.raterRating {
+  display: flex;
+  font-size: 2.1rem;
+}
+
+.coachUsername {
+  margin-bottom: 1vh;
+}
+
+@media (max-width: 600px) {
+  .coachHeader {
+    display: block;
+  }
+
+  .coachImage {
+    max-height: 100%;
+    margin-bottom: 2vh;
+  }
+}

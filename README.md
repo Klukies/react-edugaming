@@ -26,7 +26,7 @@ Laravel app
 
 ## Built with
 *  Laravel: The PHP Framework For Web Artisans (https://laravel.com/)
-*  React: The Progressive JavaScript Framework (https://reactjs.org/)
+*  React: A JavaScript library for building user interfaces (https://reactjs.org/)
 
 ## Authors
 **Lukas Cornille**
