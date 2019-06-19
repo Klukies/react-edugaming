@@ -5,6 +5,7 @@ import Authentication from './components/Authentication';
 import HeaderComponent from './components/layout/HeaderComponent';
 import Home from './views/Home';
 import Coaches from './views/Coaches';
+import Coach from './views/Coach';
 import FooterComponent from './components/layout/FooterComponent';
 
 
@@ -36,6 +37,7 @@ class App extends React.Component {
         <div className='body'>
           <Route exact path='/' component={Home} />
           <Route exact path='/coaches' component={Coaches} />
+          <Route exact path='/coach/:username' component={Coach} />
         </div>
         <FooterComponent />
       </Router>

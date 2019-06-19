@@ -4,7 +4,7 @@ import styles from '../../assets/css/Coach.module.css';
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 
-export default class Coach extends React.Component {
+export default class CoachItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

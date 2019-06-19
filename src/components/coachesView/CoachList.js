@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../assets/css/CoachList.module.css';
-import Coach from './Coach';
+import CoachItem from './CoachItem';
 
 export default class CoachList extends React.Component {
   render() {
@@ -10,7 +10,7 @@ export default class CoachList extends React.Component {
     return (
       <div className={styles.coachesList}>
         {this.props.coaches.map(coach =>
-          <Coach coach={coach} key={coach.coach_id}/>
+          <CoachItem coach={coach} key={coach.coach_id}/>
         )}
       </div>
     )
