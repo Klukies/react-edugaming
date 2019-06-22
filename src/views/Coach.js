@@ -26,27 +26,30 @@ export default class Coach extends React.Component {
   }
 
   render() {
-    if(!this.state.isCoachLoaded) {
-      return(null)
-    }
     return(
-      <div className={styles.coachFull}>
-        <CoachInformation
-        img_url={this.state.coach.img_url}
-        username={this.state.coach.username}
-        rating={this.state.coach.average_rating}
-        description={this.state.coach.description}/>
+      <>
+        {this.state.isCoachLoaded
+          ?
+          <div className={styles.coachFull}>
+            <CoachInformation
+            img_url={this.state.coach.img_url}
+            username={this.state.coach.username}
+            rating={this.state.coach.average_rating}
+            description={this.state.coach.description}/>
 
-        <button onClick={this.createReservation}>Reserve my coach</button>
-        <Flatpickr data-enable-time
-        value={this.state.date}
-        onChange={date => {this.setState({date: date[0]})}}
-        options={{
-          inline: true,
-          minDate: "today",
-          time_24hr: true
-        }}/>
-      </div>
+            <button onClick={this.createReservation}>Reserve my coach</button>
+            <Flatpickr data-enable-time
+            value={this.state.date}
+            onChange={date => {this.setState({date: date[0]})}}
+            options={{
+              inline: true,
+              minDate: "today",
+              time_24hr: true
+            }}/>
+          </div>
+          : null
+        }
+        </>
     )
   }
 
