@@ -57,6 +57,7 @@ export default class HeaderComponent extends React.Component {
     .then(response => {
       localStorage.setItem('user', response.data.access_token);
     })
+    .catch(err => {})
     // TODO: failed refresh => log user out
   }
 }
