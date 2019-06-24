@@ -3,10 +3,10 @@ import axios from '../utils/axios';
 import styles from '../assets/css/Coach.module.css';
 import 'flatpickr/dist/themes/dark.css'
 import CoachInformation from '../components/coachView/CoachInformation';
-import CoachReviews from '../components/coachView/CoachReviews'
+import CoachReviews from '../components/coachView/CoachReviews';
+import CreateReview from '../components/coachView/CreateReview';
 import Flatpickr from 'react-flatpickr';
 import { loggedIn } from '../utils/authentication';
-
 
 export default class Coach extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ export default class Coach extends React.Component {
       date: new Date(),
       reservationMessage: '',
       reservationError: '',
+      isReviewModalVisible: false
     }
     this.createReservation = this.createReservation.bind(this);
   }
@@ -53,6 +54,22 @@ export default class Coach extends React.Component {
     }
   }
 
+  openReviewModal = e => {
+    this.setState({isReviewModalVisible: true});
+  }
+
+  closeReviewModal = e => {
+    e.stopPropagation();
+    this.setState({isReviewModalVisible: false});
+  }
+
+  updateReviews = (updatedReviews) => {
+    this.setState({
+      reviews: updatedReviews,
+      isReviewModalVisible: false
+    })
+  }
+
   render() {
     return(
       <>
@@ -86,7 +103,16 @@ export default class Coach extends React.Component {
               </button>
             </div>
 
-            <CoachReviews reviews={this.state.coach.reviews}/>
+            <CoachReviews
+              reviews={this.state.reviews}
+              openLoginModal={this.props.openModal}
+              openReviewModal={this.openReviewModal}/>
+
+            <CreateReview
+              coach_id={this.state.coach.coach_id}
+              closeReviewModal={this.closeReviewModal}
+              isReviewModalVisible={this.state.isReviewModalVisible}
+              updateReviews={this.updateReviews} />
           </div>
           : null
         }
@@ -104,6 +130,7 @@ export default class Coach extends React.Component {
       this.setState({
         isCoachLoaded: true,
         coach: response.data[0],
+        reviews: response.data[0].reviews
       });
     });
     window.scrollTo(0,0);

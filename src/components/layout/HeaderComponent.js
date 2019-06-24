@@ -51,6 +51,12 @@ export default class HeaderComponent extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/auth/refresh')
+    axios.get('/auth/refreshreact', {
+      headers: { Authorization: 'Bearer ' + localStorage.getItem('user') }
+    })
+    .then(response => {
+      localStorage.setItem('user', response.data.access_token);
+    })
+    // TODO: failed refresh => log user out
   }
 }

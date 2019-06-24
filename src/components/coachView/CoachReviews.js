@@ -1,8 +1,22 @@
 import React from 'react';
 import styles from '../../assets/css/CoachReviews.module.css';
 import CoachReview from './CoachReview';
+import { loggedIn } from '../../utils/authentication';
 
 export default class CoachReviews extends React.Component {
+  constructor(props) {
+    super(props);
+    this.createReview = this.createReview.bind(this);
+  }
+
+  createReview = () => {
+    if (!loggedIn()) {
+      this.props.openLoginModal();
+    } else {
+      this.props.openReviewModal();
+    }
+  }
+
   render() {
     return (
       <div className={styles.reviews}>
@@ -16,7 +30,11 @@ export default class CoachReviews extends React.Component {
         ) : (
           <p>Coach doesn't have any reviews yet.</p>
         )}
-        <button className={`btn ${styles.reviewBtn}`}>Leave a review</button>
+        <button
+          className={`btn ${styles.reviewBtn}`}
+          onClick={this.createReview}>
+          Leave a review
+        </button>
       </div>
     )
   }

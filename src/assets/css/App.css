@@ -95,7 +95,7 @@ article:nth-child(even) {
   object-fit: cover;
 }
 
-.is-active {
+.is-active, .will-be-active {
   display: block;
   color: #ffd055 !important;
 }

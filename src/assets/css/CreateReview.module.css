@@ -1,0 +1,89 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 102;
+}
+
+.modal {
+  background-color: #FFF;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  z-index: 105;
+  width: 20vw;
+  padding-bottom: 2vh;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+.modalHeader, .reviewForm, .reviewError {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.reviewTitle {
+  margin-bottom: 0;
+}
+
+.rating {
+  display: flex;
+  font-size: 2rem;
+}
+
+.reviewError {
+  color: #bb3333;
+  margin-bottom: 1vh;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: 15vh;
+  resize: none;
+  padding: 1vh;;
+  margin-bottom: 2vh;
+  font: inherit;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewBtn {
+  width: 48%;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    width: 100vw;
+  }
+}
