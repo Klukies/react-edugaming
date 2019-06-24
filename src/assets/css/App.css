@@ -112,3 +112,8 @@ article:nth-child(even) {
 .flatpickr-monthDropdown-months, .flatpickr-weekday, .numInput {
   background: #1F337B !important;
 }
+
+.flatpickr-calendar {
+  margin-bottom: 1vh;
+  border-radius: 3px !important;
+}

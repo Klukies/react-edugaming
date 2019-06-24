@@ -1,0 +1,19 @@
+.reviewList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+}
+
+.reviewTitle {
+  margin-bottom: 1vh;
+}
+
+.reviewBtn {
+  border: none;
+}
+
+.reviews {
+  margin-bottom: 2vh;
+}

@@ -10,7 +10,7 @@ export default class FooterComponent extends React.Component {
           <img src={process.env.PUBLIC_URL + '/assets/images/logo.png'} alt="Logo of EduGaming"/>
         </div>
         <a href={`mailto:info@edugaming.be`}>info@edugaming.be</a>
-        <a href={`mailto:+32499 12 34 56}`}>+32499 12 34 56</a>
+        <a href={`tel:+32499123456`}>+32 499 12 34 56</a>
         <div className={styles.socialMedia}>
           <div className={styles.socialMediaWrapper}>
             <img src={process.env.PUBLIC_URL + '/assets/images/facebook.png'} alt="Logo of Facebook"/>

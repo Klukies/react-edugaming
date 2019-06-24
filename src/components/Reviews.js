@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../assets/css/Reviews.module.css';
+import styles from '../assets/css/HomeReviews.module.css';
 
 export default class Reviews extends React.Component {
   render() {

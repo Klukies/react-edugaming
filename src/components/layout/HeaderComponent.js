@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './../../assets/css/Header.module.css';
+import axios from '../../utils/axios';
 import { NavLink } from 'react-router-dom';
 import { loggedIn, logout } from '../../utils/authentication.js'
 
@@ -47,5 +48,9 @@ export default class HeaderComponent extends React.Component {
         </div>
       </header>
     )
+  }
+
+  componentDidMount() {
+    axios.get('/auth/refresh')
   }
 }

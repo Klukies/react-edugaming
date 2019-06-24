@@ -37,7 +37,10 @@ class App extends React.Component {
         <div className='body'>
           <Route exact path='/' component={Home} />
           <Route exact path='/coaches' component={Coaches} />
-          <Route exact path='/coach/:username' component={Coach} />
+          <Route exact path='/coach/:username'
+            render={(props) => (
+              <Coach {...props} openModal={this.showLoginModal}/>
+            )}/>
         </div>
         <FooterComponent />
       </Router>

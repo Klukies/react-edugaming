@@ -5,6 +5,28 @@
   padding-top: 4vh;
 }
 
+.reservationError, .reservationMessage {
+  display: block;
+  margin-bottom: 1vh;
+}
+
+.reservation {
+  margin-bottom: 5vh;
+}
+
+.reservationError {
+  color: red;
+}
+
+.reservationMessage {
+  color: green;
+}
+
+.reservationBtn {
+  border: none;
+  width: inherit;
+}
+
 @media (max-width: 1024px) {
   .coachFull {
     width: 95vw;
