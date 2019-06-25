@@ -7,7 +7,8 @@ export default class Banners extends React.Component {
     super(props);
     this.toggleSlides = this.toggleSlides.bind(this);
     this.state = {
-      isPlaying: true
+      isPlaying: true,
+      isIos: false,
     }
   }
 
@@ -25,7 +26,7 @@ export default class Banners extends React.Component {
   }
 
   render() {
-    const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isIos = this.state.isIos;
     return (
       <div className={styles.bannersWrapper}>
         <Slider ref={slider => (this.slider = slider)}
@@ -35,7 +36,7 @@ export default class Banners extends React.Component {
         pauseOnHover={false}>
         {isIos ? (
           this.props.banners.map(banner =>
-              <img key={banner.game_id} src={banner.old_img_url} alt={banner.title}/>
+              <img key={banner.game_id} src={banner.old_browser_img_url} alt={banner.title}/>
           )) : (
           this.props.banners.map(banner =>
               <img key={banner.game_id} src={banner.img_url} alt={banner.title}/>
@@ -48,4 +49,10 @@ export default class Banners extends React.Component {
       </div>
     )
   };
+
+  componentDidMount() {
+    this.setState({
+      isIos: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+    })
+  }
 }
