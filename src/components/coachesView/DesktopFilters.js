@@ -40,18 +40,18 @@ export default class DesktopFilters extends React.Component {
       <div className={styles.filters}>
         <DesktopGamesFilter
           filterName='Games'
-          filter={this.props.filters['Games']}
+          filter={this.props.filters.Games}
           gamesFilterCallback={this.gamesFilterCallback}/>
 
         <DesktopPricesFilter
           filterName='Prices'
-          filter={this.props.filters['Prices']}
+          filter={this.props.filters.Prices}
           priceFilterCallback={this.priceFilterCallback}/>
 
         <DesktopRatingsFilter
           filterName='Ratings'
-          filter={this.props.filters['Ratings']}
-          ratingFilterCallback={this.ratingFilterCallback} />
+          filter={this.props.filters.Ratings}
+          ratingFilterCallback={this.ratingFilterCallback}/>
       </div>
     )
   }

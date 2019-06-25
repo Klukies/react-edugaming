@@ -30,14 +30,14 @@ export default class DesktopGamesFilter extends React.Component {
               onChange={this.changePrice} />
             <label htmlFor='-1'>All</label>
           </li>
-          {Object.keys(this.props.filter).map((keyName, i) => (
-            <li key={keyName}>
+          {Object.keys(this.props.filter).map(price => (
+            <li key={price}>
               <input type='radio'
-                id={keyName}
-                value={keyName}
-                checked={this.state.priceToFilter === keyName}
+                id={price}
+                value={price}
+                checked={this.state.priceToFilter === price}
                 onChange={this.changePrice}/>
-              <label htmlFor={keyName}>{this.props.filter[keyName]}</label>
+              <label htmlFor={price}>{this.props.filter[price]}</label>
             </li>
           ))}
         </ul>

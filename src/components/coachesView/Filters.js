@@ -9,8 +9,8 @@ export default class Filters extends React.Component {
     this.state = {
       filtersLoaded: false,
       filters: {},
-      isMobile: false,
-    }
+      isMobile: false
+    };
     this.filterCallback = this.filterCallback.bind(this);
   }
 
@@ -21,8 +21,8 @@ export default class Filters extends React.Component {
   onWindowResize = () => {
     this.setState({
       isMobile: window.innerWidth < 1280
-    }, () => console.log(this.state.isMobile)
-  )};
+    })
+  };
 
   render() {
     if (!this.state.filtersLoaded) {
@@ -49,7 +49,8 @@ export default class Filters extends React.Component {
         filtersLoaded: true,
         filters: response.data,
       })
-    });
+    })
+    .catch(err => {})
     window.addEventListener("resize", this.onWindowResize);
     this.onWindowResize();
   }

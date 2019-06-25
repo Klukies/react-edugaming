@@ -33,10 +33,10 @@ export default class DesktopGamesFilter extends React.Component {
       <div className="filter">
         <h1 className={styles.filterTitle}>{this.props.filterName}</h1>
         <ul className={styles.filterList}>
-          {this.props.filter.map(option =>
-            <li key={option.game_id}>
-              <input type='checkbox'id={option.title} value={option.game_id} onChange={this.changeGames} />
-              <label htmlFor={option.title}>{option.title}</label>
+          {this.props.filter.map(game =>
+            <li key={game.game_id}>
+              <input type='checkbox'id={game.title} value={game.game_id} onChange={this.changeGames} />
+              <label htmlFor={game.title}>{game.title}</label>
             </li>
           )}
         </ul>
