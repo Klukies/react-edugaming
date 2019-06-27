@@ -1,21 +1,38 @@
 import React from 'react';
 import styles from './../../assets/css/Header.module.css';
 import axios from '../../utils/axios';
+import MobileNavigation from './MobileNavigation';
 import { NavLink } from 'react-router-dom';
 import { loggedIn, logout } from '../../utils/authentication.js'
 
 export default class HeaderComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.logUserOut = this.logUserOut.bind(this);
     this.state = {
       isLoggedIn: loggedIn(),
+      isFocused: '',
     }
+    this.logUserOut = this.logUserOut.bind(this);
+    this.toggleNavigation = this.toggleNavigation.bind(this);
   }
 
   logUserOut() {
     logout();
     this.setState({isLoggedIn: loggedIn()});
+  }
+
+  toggleNavigation = e => {
+    if (this.state.isFocused === '') {
+      this.setState({
+        isFocused: styles.focus,
+        isShown: 'show'
+      })
+    } else {
+      this.setState({
+        isFocused: '',
+        isShown: ''
+      })
+    }
   }
 
   render() {
@@ -27,6 +44,17 @@ export default class HeaderComponent extends React.Component {
             <h1>EduGaming</h1>
           </div>
         </NavLink>
+        <div className={styles.mobileNavigation}>
+          <button className={`${styles.hamburger} ${this.state.isFocused}`} onClick={this.toggleNavigation}>
+              <span className={styles.burger}></span>
+              <span className={styles.burger}></span>
+              <span className={styles.burger}></span>
+          </button>
+          <MobileNavigation
+            isShown={this.state.isShown}
+            toggleNavigation={this.toggleNavigation}
+            login={this.props.openModal}/>
+        </div>
         <div className={styles.headerNavigation}>
           <nav>
             <ul>

@@ -94,7 +94,7 @@ export default class LoginForm extends React.Component {
             onClick={this.focus}
             onBlur={this.blur}/>
           </div>
-          <button type="submit" className="btn submit-btn">Login</button>
+          <button type="submit" className={`btn ${styles.submitBtn}`}>Login</button>
         </form>
       </div>
     )

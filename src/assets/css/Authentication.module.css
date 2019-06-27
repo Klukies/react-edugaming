@@ -117,6 +117,10 @@
   font-size: 1.3rem;
 }
 
+.submitBtn {
+  border: none
+}
+
 .error {
   color: #bb3333;
 }
