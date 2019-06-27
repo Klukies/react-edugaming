@@ -15,7 +15,10 @@ export default class FeaturedCoaches extends React.Component {
                   <h3>{coach.username} </h3>
                   <figure>
                     <div className={styles.figure_img}>
-                      <img src={coach.img_url} alt={coach.name}/>
+                      <img src={coach.img_url}
+                        alt={coach.username}
+                        onError={(e) => {e.target.onerror = null;
+                          e.target.src='https://node-edugaming.herokuapp.com/images/standard_avatar.png'}}/>
                     </div>
                     <figcaption>
                       {coach.summary !== null &&

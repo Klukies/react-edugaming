@@ -33,10 +33,14 @@ export default class MobileNavigation extends React.Component {
           <li>
             {loggedIn() ? (
               <button className={styles.navLink}
-                onClick={this.logUserOut}>Logout</button>
+                onClick={this.logUserOut}
+                value='Logout'
+                aria-label='Logout'>Logout</button>
             ) : (
               <button className={styles.navLink}
-              onClick={this.login}>Login</button>
+              onClick={this.login}
+              value='Login'
+              aria-label='Login'>Login</button>
             )}
           </li>
         </ul>

@@ -51,7 +51,11 @@ export default class HeaderComponent extends React.Component {
           </div>
         </NavLink>
         <div className={styles.mobileNavigation}>
-          <button className={`${styles.hamburger} ${this.state.isFocused}`} onClick={this.toggleNavigation}>
+          <button
+            className={`${styles.hamburger} ${this.state.isFocused}`}
+            onClick={this.toggleNavigation}
+            value='Menu'
+            aria-label='Menu'>
               <span className={styles.burger}></span>
               <span className={styles.burger}></span>
               <span className={styles.burger}></span>
@@ -94,6 +98,5 @@ export default class HeaderComponent extends React.Component {
       localStorage.setItem('user', response.data.access_token);
     })
     .catch(err => {})
-    // TODO: failed refresh => log user out
   }
 }

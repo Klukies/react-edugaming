@@ -44,7 +44,9 @@ export default class Banners extends React.Component {
         </Slider>
         <button
         className={`${styles.pause_play} ${!this.state.isPlaying ? '' : styles.playing}`}
-        onClick={this.toggleSlides}>
+        onClick={this.toggleSlides}
+        value='Pause Banners'
+        aria-label='Pause Banners'>
         </button>
       </div>
     )
