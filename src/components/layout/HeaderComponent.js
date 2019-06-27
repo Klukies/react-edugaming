@@ -21,10 +21,12 @@ export default class HeaderComponent extends React.Component {
   render() {
     return (
       <header>
-        <div className={styles.headerLogo}>
-          <img src={process.env.PUBLIC_URL + '/assets/images/logo.png'} alt="Logo of Edugaming"/>
-          <h1>EduGaming</h1>
-        </div>
+        <NavLink to='/' className={styles.LogoLink}>
+          <div className={styles.headerLogo}>
+            <img src={process.env.PUBLIC_URL + '/assets/images/logo.png'} alt="Logo of Edugaming"/>
+            <h1>EduGaming</h1>
+          </div>
+        </NavLink>
         <div className={styles.headerNavigation}>
           <nav>
             <ul>
