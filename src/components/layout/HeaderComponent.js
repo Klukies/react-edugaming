@@ -26,11 +26,17 @@ export default class HeaderComponent extends React.Component {
       this.setState({
         isFocused: styles.focus,
         isShown: 'show'
+      }, () => {
+        document.body.style.overflow = 'hidden';
+        this.props.lockScroll();
       })
     } else {
       this.setState({
         isFocused: '',
         isShown: ''
+      }, () => {
+        document.body.style.overflow = 'scroll';
+        this.props.enableScroll();
       })
     }
   }

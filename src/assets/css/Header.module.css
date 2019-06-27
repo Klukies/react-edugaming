@@ -101,6 +101,7 @@ nav a:hover::after, .navLink:hover::after {
 }
 
 .hamburger .burger {
+  position: relative;
   z-index: 205;
   transition: all 0.3s;
   border-radius: 5px;
@@ -115,6 +116,7 @@ nav a:hover::after, .navLink:hover::after {
 }
 
 .burger:first-of-type, .burger:nth-of-type(2), .burger:last-of-type {
+  z-index: 1999;
   background-color: white;
 }
 
@@ -122,7 +124,7 @@ nav a:hover::after, .navLink:hover::after {
   background-color: white;
   transition-delay: 0.4s;
   transform: translate3d(0px, 0px, 0px) rotateZ(45deg);
-  width: 40px;
+  width: 45px;
   transform-origin: left top;
 }
 
@@ -134,7 +136,7 @@ nav a:hover::after, .navLink:hover::after {
   background-color: white;
   transition-delay: 0.4s;
   transform: translate3d(0px, 0px, 0px) rotateZ(-45deg);
-  width: 40px;
+  width: 45px;
   transform-origin: left bottom;
 }
 
@@ -175,6 +177,11 @@ nav a:hover::after, .navLink:hover::after {
   .headerNavigation a, .navLink {
     font-size: 1.3rem;
   }
+
+  .hamburger {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -185,7 +192,6 @@ nav a:hover::after, .navLink:hover::after {
 
 @media (max-width: 350px) {
   header {
-    display: block;
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
   }

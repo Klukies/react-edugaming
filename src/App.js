@@ -7,6 +7,7 @@ import Home from './views/Home';
 import Coaches from './views/Coaches';
 import Coach from './views/Coach';
 import FooterComponent from './components/layout/FooterComponent';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 
 class App extends React.Component {
@@ -17,6 +18,8 @@ class App extends React.Component {
     };
     this.showLoginModal = this.showLoginModal.bind(this);
     this.closeLoginModal = this.closeLoginModal.bind(this);
+    this.lockScroll = this.lockScroll.bind(this);
+    this.enableScroll = this.enableScroll.bind(this);
   }
 
   showLoginModal() {
@@ -27,14 +30,24 @@ class App extends React.Component {
     this.setState({isModalVisible: !this.state.isModalVisible});
   }
 
+  lockScroll = e => {
+    disableBodyScroll(document.getElementById('body'));
+  }
+
+  enableScroll = e => {
+    enableBodyScroll(document.getElementById('body'));
+  }
+
   render () {
     return (
       <Router>
         <Authentication
           isModalVisible={this.state.isModalVisible}
           closeModal={this.closeLoginModal} />
-        <HeaderComponent openModal={this.showLoginModal} />
-        <div className='body'>
+        <HeaderComponent
+          openModal={this.showLoginModal}
+          lockScroll={this.lockScroll} enableScroll={this.enableScroll} />
+        <div className='body' id='body'>
           <Route exact path='/' component={Home} />
           <Route exact path='/coaches' component={Coaches} />
           <Route exact path='/coach/:username'
