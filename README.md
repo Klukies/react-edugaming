@@ -1,5 +1,5 @@
 # EduGaming
-An application for gamers to find their ideal coach.
+An application for gamers to find their ideal coach. Based on my vue application
 
 ## Getting Started
 ### Prerequisites
@@ -12,7 +12,7 @@ An application for gamers to find their ideal coach.
 ### Installing
 ! important: import the database dump file for both applications to function!
 
-Vue.js app
+React app
 *  Open any terminal to the PWA directory
 *  Run 'npm i' to install the required dependencies
 *  Run 'npm start'
